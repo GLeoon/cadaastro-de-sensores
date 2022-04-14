@@ -8,12 +8,12 @@ datasource db {
 }
 
 model SensoresGroup {
-  id         Int      @id @default(autoincrement())
+  id         String      @id @default(uuid())
   tamanho    String?  @db.VarChar(10)
   tens_o_bat Decimal  @map("tensão_bat") @db.Decimal(4, 1)
   marca      String   @db.Char(3)
   tipo       String
   creat_at   DateTime @default(now())
 
-  @@map("Grupo_de_Sensores")
+  @@map("sensores")
 }
